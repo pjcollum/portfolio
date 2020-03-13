@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import Navbar from './components/Navbar.js';
+import Home from './components/Home.js';
+import About from './components/About.js';
+import Contact from './components/Contact.js';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+class App extends Component {
+  state = {
+    basket: 0
+  }
+
+  addToBasket = () => {
+    console.log("add to basket was clicked");
+    this.setState({
+      basket: this.state.basket + 1
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        
+        <BrowserRouter>
+        <Navbar myBasket={this.state.basket} />
+          <Switch>
+
+            <Route exact path='/' render={() => <Home addToBasket={this.addToBasket} />} />
+            <Route path='/about' component={About} />
+            <Route path='/contact' component={Contact} />
+
+          </Switch>
+        </BrowserRouter>
+
+       
+      </div>
+    )
+  }
 }
+
 
 export default App;
