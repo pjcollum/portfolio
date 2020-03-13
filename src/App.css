@@ -22,6 +22,21 @@ nav{
   }
 
   body{
-      background-color: #a08feb;
+      background-color:white;
   }
-  
+  img{
+      width:50px;
+      height: 50px;
+  }
+  img:hover{
+      cursor:pointer;
+  }
+  .pointsButton{
+    background-color: lightblue;
+    width: 100px;
+    height: 100px;
+    cursor:pointer;
+  }
+  .pointsButton:hover{
+      border: solid 5px black;
+  }

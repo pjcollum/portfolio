@@ -36,7 +36,9 @@ class App extends Component {
           </Switch>
         </BrowserRouter>
 
-       
+        <footer>
+            &copy; Pete Collum, <cite>Manchester </cite>&lt;2020&gt;
+        </footer>
       </div>
     )
   }
